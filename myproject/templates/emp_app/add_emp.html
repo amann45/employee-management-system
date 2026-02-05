@@ -1,0 +1,122 @@
+{% extends "emp_app/base.html" %} {% block title %} Add Employee | Employee
+Management System {% endblock title %} {% block content %}
+<div class="container mt-5">
+  <h1 class="text-center text-primary fw-bold">Add New employee</h1>
+
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-lg border-0">
+        <div class="card-header bg-dark text-white text-center">
+          <h4><i class="fas fa-user-plus"></i> Employee Registration</h4>
+        </div>
+        <div class="card-body">
+          <form method="POST" novalidate>
+            {% csrf_token %}
+
+            <div class="mb-3">
+              <label for="name" class="form-label fw-bold">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                name="name"
+                placeholder="Enter full name"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="empid" class="form-label fw-bold">Emp_id</label>
+              <input
+                type="text"
+                class="form-control"
+                id="empid"
+                name="empid"
+                placeholder="enter emp_id"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="dept" class="form-label fw-bold">Department</label>
+              <input
+                type="text"
+                class="form-control"
+                id="dept"
+                name="dept"
+                placeholder="Enter department name"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="address" class="form-label fw-bold">Address</label>
+              <textarea
+                class="form-control"
+                id="address"
+                name="address"
+                rows="3"
+                placeholder="Enter address"
+                required
+              ></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="phone" class="form-label fw-bold">Phone Number</label>
+              <input
+                type="tel"
+                class="form-control"
+                id="phone"
+                name="phone"
+                placeholder="Enter phone number"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label fw-bold"
+                >Email Address</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Enter employee email"
+                required
+              />
+              <div class="form-text">
+                We'll never share employee email with anyone else.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="salary" class="form-label fw-bold">Salary</label>
+              <input
+                type="number"
+                class="form-control"
+                id="salary"
+                name="salary"
+                placeholder="Enter salary amount"
+                required
+              />
+            </div>
+
+            <div class="text-center mt-4">
+              <button type="submit" class="btn btn-success btn-lg px-4">
+                <i class="fas fa-check-circle"></i> Add employee
+              </button>
+              <a
+                href="{% url 'home' %}"
+                class="btn btn-secondary btn-lg px-4 ms-3"
+              >
+                <i class="fas fa-arrow-left"></i> Back to Home
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
